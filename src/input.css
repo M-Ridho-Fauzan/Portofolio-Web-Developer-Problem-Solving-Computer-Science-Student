@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.navbar-fixed {
+  @apply fixed z-[999] bg-white bg-opacity-80 backdrop-blur-sm shadow-sm dark:bg-dark dark:bg-opacity-50;
+  box-shadow: isset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+  /* backdrop-filter: blur(5px); */
+}
+
+.icon-style {
+  @apply w-10 h-10 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition-all duration-100 dark:text-slate-100;
+}
+
+.icon-card {
+  @apply w-8 h-8 dark:border-gray-100 rounded-full flex justify-center items-center border border-darkFont  hover:border-primary hover:bg-primary hover:text-white transition-all duration-100 dark:text-slate-100;
+}
+
+.icon-style2 {
+  @apply w-8 h-8 mr-3 md:my-[2px] rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition-all duration-100 dark:text-slate-100;
+}
+
+.btn-nav {
+  @apply text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-slate-100;
+}
+
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-slate-100;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+.decor-icon {
+  @apply absolute flex items-center justify-center  text-center text-gray-900 shadow-md bg-primary/40 backdrop-blur-sm dark:shadow-black shadow-stone-900 drop-shadow-md  dark:bg-stone-500;
+}
+
+#dark-toggle:not(:checked) ~ label div > svg.sv-light {
+  @apply hidden;
+}
+
+.card-con {
+  @apply rounded-lg transition-all duration-700 ease-in-out cursor-pointer shadow-md relative overflow-hidden hover:shadow-md lg:hover:-translate-y-8 hover:-translate-y-0 hover:shadow-slate-500;
+}
+
+.card-text-con {
+  @apply absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 transition-opacity duration-500 ease-in-out group-has-[div]:opacity-100;
+}
+
+.card-anim-con {
+  @apply absolute bottom-0 left-0 right-0 p-4 text-center text-white transition-transform duration-500 ease-in-out delay-200 transform translate-y-full group-has-[div]:translate-y-0;
+}
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ======== */
+
+.sc-design::-webkit-scrollbar {
+  @apply max-w-1;
+}
+
+/* Track */
+.sc-design::-webkit-scrollbar-track {
+  @apply shadow-inner shadow-gray-200 rounded-md;
+}
+
+/* Handle */
+.sc-design::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-md;
+}
+
+.skill-a {
+  @apply flex-shrink-0 w-[150px] h-[100px]  m-2 flex items-center justify-center rounded-lg;
+}
+
+.skill-svg {
+  @apply w-24 dark:fill-darkFont dark:hover:fill-gray-300  fill-gray-600 hover:fill-gray-700 transform hover:scale-125 duration-150;
+}
+
+.contact-input-con {
+  @apply w-full p-3 rounded-md bg-slate-200 text-dark focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary
+}
+
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
+}

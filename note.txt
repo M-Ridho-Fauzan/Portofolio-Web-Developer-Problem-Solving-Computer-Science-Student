@@ -1,0 +1,513 @@
+    <!-- Coba2 Start -->
+    <!-- component -->
+    <!-- Display Container (not part of component) START -->
+    <div class="flex flex-col m-auto bg-white p-auto">
+      <h1
+        class="flex px-5 py-5 mx-5 text-4xl font-bold text-gray-800 lg:px-20 md:px-10 lg:mx-40 md:mx-20"
+      >
+        Example
+      </h1>
+      <div class="flex pb-10 overflow-x-scroll hide-scroll-bar">
+        <div class="flex ml-10 flex-nowrap lg:ml-40 md:ml-20">
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden transition-shadow duration-300 ease-in-out bg-white rounded-lg shadow-md hover:shadow-xl"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================ -->
+
+    <main
+      class="relative flex flex-col justify-center min-h-screen overflow-hidden bg-slate-900"
+    >
+      <div class="w-full max-w-5xl px-4 py-24 mx-auto md:px-6">
+        <div class="text-center">
+          <!-- Logo Carousel animation -->
+          <div
+            x-data="{}"
+            x-init="$nextTick(() => {
+                      let ul = $refs.logos;
+                      ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                      ul.nextSibling.setAttribute('aria-hidden', 'true');
+                  })"
+            class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+          >
+            <ul
+              x-ref="logos"
+              class="flex items-center justify-center md:justify-start [&_li]:mx-10 bg-slate-300 [&_img]:max-w-none animate-infinite-scroll"
+            >
+              <li>
+                <img src="./src/img/clients/google.svg" alt="Facebook" />
+              </li>
+              <li>
+                <img src="./src/img/clients/progate.svg" alt="Disney" />
+              </li>
+              <li>
+                <img
+                  src="./src/img/clients/FreeCodeCamp_logo.svg"
+                  alt="Airbnb"
+                />
+              </li>
+            </ul>
+            <ul
+              x-ref="logos"
+              class="flex items-center mx-8 bg-lime-500 justify-center md:justify-start [&_li]:mx-10 [&_img]:max-w-none animate-infinite-scroll"
+              aria-hidden="true"
+            >
+              <li>
+                <img src="./src/img/clients/google.svg" alt="Facebook" />
+              </li>
+              <li>
+                <img src="./src/img/clients/progate.svg" alt="Disney" />
+              </li>
+              <li>
+                <img
+                  src="./src/img/clients/FreeCodeCamp_logo.svg"
+                  alt="Airbnb"
+                />
+              </li>
+            </ul>
+          </div>
+          <!-- End: Logo Carousel animation -->
+        </div>
+      </div>
+    </main>
+    <!-- Display Container (not part of component) END -->
+    <!-- HTML -->
+    <div class="flex space-x-16 overflow-hidden group bg-slate-300">
+      <div
+        class="flex space-x-16 bg-lime-500 animate-infinite-scroll group-hover:paused"
+      >
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ee9f161-df19-4fa7-a2a6-edf9acf0e0d6?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 1"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/80480f8a-69ad-4c30-88ba-f4e7ee08fc51?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 2"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/140d376c-13f2-4823-b397-b3de733bf560?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 3"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/0ae217f1-b695-4661-bd3d-6440eebc2c5c?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 4"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/67017079-51e1-4245-9bf1-b5957eb66c74?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 5"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/515313ac-7ec9-4c6e-95db-80dac2f8b960?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 6"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c513fc32-3ab9-4cca-911e-0b2642ac7206?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 7"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5731a5a7-689f-49ae-abf1-6e6dc00c2043?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 8"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb51d286-530f-42be-9e91-9c850522f127?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 9"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/44ba8437-f6fd-4a51-bfd3-262d7528f7a4?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 10"
+        />
+      </div>
+      <div
+        class="flex space-x-16 bg-pink-500 animate-infinite-scroll group-hover:paused"
+        aria-hidden="true"
+      >
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ee9f161-df19-4fa7-a2a6-edf9acf0e0d6?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 1"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/80480f8a-69ad-4c30-88ba-f4e7ee08fc51?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 2"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/140d376c-13f2-4823-b397-b3de733bf560?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 3"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/0ae217f1-b695-4661-bd3d-6440eebc2c5c?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 4"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/67017079-51e1-4245-9bf1-b5957eb66c74?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 5"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/515313ac-7ec9-4c6e-95db-80dac2f8b960?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 6"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c513fc32-3ab9-4cca-911e-0b2642ac7206?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 7"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5731a5a7-689f-49ae-abf1-6e6dc00c2043?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 8"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb51d286-530f-42be-9e91-9c850522f127?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 9"
+        />
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/44ba8437-f6fd-4a51-bfd3-262d7528f7a4?apiKey=7e8b177c7c374d8abaf3aebf27f1c17d&"
+          class="max-w-none"
+          alt="Image 10"
+        />
+      </div>
+    </div>
+    <!--  -->
+    <div class="w-9/12 px-4 mx-auto">
+      <div class="relative overflow-auto">
+        <div
+          id="scroll-container"
+          class="relative flex w-full gap-16 pb-10 overflow-x-auto snap-proximity"
+          style="white-space: nowrap"
+        >
+          <!-- Contoh item bergulir -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/google.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/facebook.svg"
+              alt=""
+            />
+          </a>
+          <!-- Tambahkan lebih banyak item di sini -->
+          <!-- Contoh item bergulir -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/google.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/facebook.svg"
+              alt=""
+            />
+          </a>
+          <!-- Tambahkan lebih banyak item di sini -->
+          <!-- Contoh item bergulir -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/google.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/facebook.svg"
+              alt=""
+            />
+          </a>
+          <!-- Tambahkan lebih banyak item di sini -->
+          <!-- Contoh item bergulir -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/google.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/facebook.svg"
+              alt=""
+            />
+          </a>
+          <!-- Tambahkan lebih banyak item di sini -->
+          <!-- Contoh item bergulir -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/google.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/facebook.svg"
+              alt=""
+            />
+          </a>
+          <!-- Tambahkan lebih banyak item di sini -->
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var $scrollContainer = $("#scroll-container"),
+          scrollSpeed = 1, // Kecepatan scroll
+          scrollInterval;
+
+        // Fungsi untuk scroll otomatis
+        function startAutoScroll() {
+          scrollInterval = setInterval(function () {
+            $scrollContainer.scrollLeft(
+              $scrollContainer.scrollLeft() + scrollSpeed
+            );
+            // Reset scroll ke awal jika sudah mencapai akhir
+            if (
+              $scrollContainer.scrollLeft() >=
+              $scrollContainer[0].scrollWidth - $scrollContainer.width()
+            ) {
+              $scrollContainer.scrollLeft(0);
+            }
+          }, 20);
+        }
+
+        // Fungsi untuk menghentikan scroll otomatis
+        function stopAutoScroll() {
+          clearInterval(scrollInterval);
+        }
+
+        // Mulai scroll otomatis
+        startAutoScroll();
+
+        // Hentikan scroll otomatis saat di-hover, mulai lagi saat hover dilepas
+        $scrollContainer.hover(stopAutoScroll, startAutoScroll);
+
+        // Mendukung scroll manual dengan mouse wheel
+        $scrollContainer.on("scroll", function () {
+          stopAutoScroll();
+          setTimeout(startAutoScroll, 1500); // Mulai scroll otomatis lagi setelah 1.5 detik
+        });
+      });
+    </script>
+
+    <!-- Coba2 End -->
+    <div
+      class="relative h-64 overflow-hidden bg-opacity-50 bg-gradient-to-r from-transparent dark:via-stone-500"
+    >
+      <!-- <div class="absolute inset-0"> -->
+      <div class="relative overflow-auto">
+        <div class="flex ml-[50%] items-end justify-start pt-6">
+          <!-- shring -->
+        </div>
+        <div
+          class="relative flex w-full gap-16 pb-10 overflow-x-auto snap-x snap-proximity"
+        >
+          <!--  -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/google.svg"
+              alt=""
+            />
+          </a>
+          <!--  -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/progate.svg"
+              alt=""
+            />
+          </a>
+          <!--  -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[290px]"
+              src="./src/img/clients/FreeCodeCamp_logo.svg"
+              alt=""
+            />
+          </a>
+          <!--  -->
+          <!--  -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[220px]"
+              src="./src/img/clients/progate.svg"
+              alt=""
+            />
+          </a>
+          <!--  -->
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex snap-center shrink-0 first:ml-8 last:mr-8"
+          >
+            <img
+              class="max-w-[290px]"
+              src="./src/img/clients/FreeCodeCamp_logo.svg"
+              alt=""
+            />
+          </a>
+          <!--  -->
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <!--  -->
