@@ -962,6 +962,10 @@ video {
   width: 100%;
 }
 
+.w-1\/5 {
+  width: 20%;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -1103,6 +1107,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -2658,6 +2666,10 @@ body {
 
   .xl\:w-12 {
     width: 3rem;
+  }
+
+  .xl\:w-full {
+    width: 100%;
   }
 
   .xl\:flex-row {
