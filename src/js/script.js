@@ -81,83 +81,182 @@ document.addEventListener("DOMContentLoaded", function () {
     lastScrollTop = scrollTop;
   });
 
+  // const scrollContainer3 = document.getElementById("scrollContainer3");
+  // const curtainSkill = document.getElementById("curtain-skill");
+  // const startBtn3 = document.getElementById("startBtn3");
+  // const stopBtn3 = document.getElementById("stopBtn3");
+  // let scrollTween3;
+
+  // function setupInfiniteScroll() {
+  //   const items = Array.from(scrollContainer3.children);
+  //   const totalItems = items.length;
+  //   const itemWidth =
+  //     items[0].offsetWidth +
+  //     parseInt(window.getComputedStyle(items[0]).marginLeft) * 2;
+  //   const totalWidth = itemWidth * totalItems;
+
+  //   // Clone items and append them to create a seamless loop
+  //   for (let i = 0; i < totalItems * 2; i++) {
+  //     const clone = items[i % totalItems].cloneNode(true);
+  //     scrollContainer3.appendChild(clone);
+  //   }
+
+  //   function startScroll() {
+  //     if (scrollTween3) scrollTween3.kill();
+
+  //     scrollTween3 = gsap.to(scrollContainer3, {
+  //       x: `-=${totalWidth}`,
+  //       duration: totalItems * 1, // Adjust this value to change scroll speed
+  //       ease: "none",
+  //       repeat: -1,
+  //       onUpdate: () => {
+  //         if (Math.abs(gsap.getProperty(scrollContainer3, "x")) >= totalWidth) {
+  //           gsap.set(scrollContainer3, { x: 0 });
+  //         }
+  //       },
+  //     });
+  //   }
+
+  //   function pauseScroll() {
+  //     if (scrollTween3) scrollTween3.pause();
+  //   }
+
+  //   function resumeScroll() {
+  //     if (scrollTween3) scrollTween3.resume();
+  //   }
+
+  //   // Start scrolling automatically
+  //   startScroll();
+
+  //   function goScroll() {
+  //     resumeScroll();
+  //     console.log("go scroll clicked!");
+  //     startBtn3.classList.add("hidden");
+  //     curtainSkill.classList.remove("hidden");
+  //     stopBtn3.classList.remove("hidden");
+  //   }
+
+  //   function endScroll() {
+  //     pauseScroll();
+  //     console.log("end scroll clicked!");
+  //     startBtn3.classList.remove("hidden");
+  //     curtainSkill.classList.add("hidden");
+  //     stopBtn3.classList.add("hidden");
+  //   }
+
+  //   // Add event listeners for hover
+  //   scrollContainer3.addEventListener("mouseenter", endScroll);
+  //   scrollContainer3.addEventListener("mouseleave", goScroll);
+
+  //   // startBtn3.addEventListener("click", goScroll);
+  //   // stopBtn3.addEventListener("click", endScroll);
+  //   startBtn3.addEventListener("click", (event) => {
+  //     event.stopPropagation();
+  //     goScroll();
+  //   });
+
+  //   stopBtn3.addEventListener("click", (event) => {
+  //     event.stopPropagation();
+  //     endScroll();
+  //   });
+
+  //   document.addEventListener("click", (event) => {
+  //     if (!scrollContainer3.contains(event.target)) {
+  //       goScroll();
+  //     }
+  //   });
+  // }
+
+  // // Run setup when the page is loaded
+  // window.addEventListener("load", setupInfiniteScroll);
+
   const scrollContainer3 = document.getElementById("scrollContainer3");
-  const curtainSkill = document.getElementById("curtain-skill");
-  const startBtn3 = document.getElementById("startBtn3");
-  const stopBtn3 = document.getElementById("stopBtn3");
-  let scrollTween3;
+const curtainSkill = document.getElementById("curtain-skill");
+const startBtn3 = document.getElementById("startBtn3");
+const stopBtn3 = document.getElementById("stopBtn3");
 
-  function setupInfiniteScroll() {
-    const items = Array.from(scrollContainer3.children);
-    const totalItems = items.length;
-    const itemWidth =
-      items[0].offsetWidth +
-      parseInt(window.getComputedStyle(items[0]).marginLeft) * 2;
-    const totalWidth = itemWidth * totalItems;
+let scrollTween3;
 
-    // Clone items and append them to create a seamless loop
-    for (let i = 0; i < totalItems * 2; i++) {
-      const clone = items[i % totalItems].cloneNode(true);
-      scrollContainer3.appendChild(clone);
-    }
+function setupInfiniteScroll() {
+  if (!scrollContainer3 || !curtainSkill || !startBtn3 || !stopBtn3) {
+    console.error("One or more elements are missing in the DOM.");
+    return;
+  }
 
-    function startScroll() {
-      if (scrollTween3) scrollTween3.kill();
+  const items = Array.from(scrollContainer3.children);
+  const itemWidth =
+    items[0].offsetWidth +
+    parseInt(window.getComputedStyle(items[0]).marginLeft) * 2;
+  const totalWidth = itemWidth * items.length;
 
-      scrollTween3 = gsap.to(scrollContainer3, {
-        x: `-=${totalWidth}`,
-        duration: totalItems * 1, // Adjust this value to change scroll speed
-        ease: "none",
-        repeat: -1,
-        onUpdate: () => {
-          if (Math.abs(gsap.getProperty(scrollContainer3, "x")) >= totalWidth) {
-            gsap.set(scrollContainer3, { x: 0 });
-          }
-        },
-      });
-    }
+  // Clone items for infinite scroll
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    scrollContainer3.appendChild(clone);
+  });
 
-    function pauseScroll() {
-      if (scrollTween3) scrollTween3.pause();
-    }
+  function toggleVisibility(isScrolling) {
+    startBtn3.classList.toggle("hidden", isScrolling);
+    curtainSkill.classList.toggle("hidden", !isScrolling);
+    stopBtn3.classList.toggle("hidden", !isScrolling);
+  }
 
-    function resumeScroll() {
-      if (scrollTween3) scrollTween3.resume();
-    }
-
-    // Start scrolling automatically
-    startScroll();
-
-    function goScroll() {
-      resumeScroll();
-      startBtn3.classList.add("hidden");
-      curtainSkill.classList.remove("hidden");
-      stopBtn3.classList.remove("hidden");
-    }
-
-    function endScroll() {
-      pauseScroll();
-      startBtn3.classList.remove("hidden");
-      curtainSkill.classList.add("hidden");
-      stopBtn3.classList.add("hidden");
-    }
-
-    // Add event listeners for hover
-    scrollContainer3.addEventListener("mouseenter", endScroll);
-    scrollContainer3.addEventListener("mouseleave", goScroll);
-    //
-    startBtn3.addEventListener("click", goScroll);
-    stopBtn3.addEventListener("click", endScroll);
-    //
-    document.addEventListener("click", (event) => {
-      if (!scrollContainer3.contains(event.target)) {
-        goScroll();
-      }
+  function startScroll() {
+    if (scrollTween3) scrollTween3.kill();
+    scrollTween3 = gsap.to(scrollContainer3, {
+      x: `-=${totalWidth}`,
+      duration: items.length, // Adjust scroll speed
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: (x) => `${parseFloat(x) % totalWidth}px`,
+      },
     });
   }
 
-  // Run setup when the page is loaded
-  window.addEventListener("load", setupInfiniteScroll);
+  function pauseScroll() {
+    scrollTween3?.pause();
+  }
+
+  function resumeScroll() {
+    scrollTween3?.resume();
+  }
+
+  // Event Handlers
+  function goScroll() {
+    resumeScroll();
+    toggleVisibility(true);
+  }
+
+  function endScroll() {
+    pauseScroll();
+    toggleVisibility(false);
+  }
+
+  // Add Event Listeners
+  scrollContainer3.addEventListener("mouseenter", endScroll);
+  scrollContainer3.addEventListener("mouseleave", goScroll);
+    startBtn3.addEventListener("click", (event) => {
+      event.stopPropagation();
+      goScroll();
+    });
+
+    stopBtn3.addEventListener("click", (event) => {
+      event.stopPropagation();
+      endScroll();
+    });
+
+  document.addEventListener("click", (event) => {
+    if (!scrollContainer3.contains(event.target)) goScroll();
+  });
+
+  // Start scrolling
+  startScroll();
+}
+
+// Initialize on page load
+window.addEventListener("load", setupInfiniteScroll);
+
 
   // const formContact = document.getElementById("contact-form");
 
